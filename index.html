@@ -1,0 +1,39 @@
+<html>
+<head>
+	<title> square application </title>
+	<style> 
+		*{ font-size: 50px; background-color:lightblue;}
+	</style>
+</head>	
+
+<body>
+<center>
+	<h1>Square Application</h1>
+	<form onsubmit="squr()">
+		<input type="number" step="any" id="num" placeholder="enter your number"/>
+		<br> <br>
+		<input type="submit" >
+	</form>
+	<h2 id="msg"></h2>
+	<script>
+		function squr(){
+			event.preventDefault();
+			let num = document.getElementById("num");
+			let msg = document.getElementById("msg");
+
+			if(num.value == ""){
+				alert("Please enter your number");
+				msg.innerHTML = "";
+				num.focus();
+				return;
+			}
+
+			let n = parseFloat(num.value);
+			let ans = n * n;
+			msg.innerHTML = "Square of " + n + " is " + ans.toFixed(2);
+		
+		}
+	</script>
+</center>
+</body>
+</html>
